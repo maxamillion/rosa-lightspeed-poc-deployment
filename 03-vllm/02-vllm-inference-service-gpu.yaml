@@ -18,8 +18,8 @@ spec:
         limits:
           nvidia.com/gpu: 1
           cpu: "4"
-          memory: 12Gi
+          memory: 10Gi
         requests:
           nvidia.com/gpu: 1
           cpu: "2"
-          memory: 10Gi
+          memory: 8Gi
