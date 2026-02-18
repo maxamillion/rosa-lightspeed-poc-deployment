@@ -78,15 +78,15 @@ data:
 
     benchmarks: []
     conversations_store:
-      db_path: ~/.llama/storage/conversations.db
+      db_path: /app-root/.llama/storage/conversations.db
       type: sqlite
     datasets: []
 
     inference_store:
-      db_path: ~/.llama/storage/inference-store.db
+      db_path: /app-root/.llama/storage/inference-store.db
       type: sqlite
     metadata_store:
-      db_path: ~/.llama/storage/registry.db
+      db_path: /app-root/.llama/storage/registry.db
       type: sqlite
 
     providers:
@@ -112,7 +112,7 @@ data:
           metadata_store:
             table_name: files_metadata
             backend: sql_default
-          storage_dir: ~/.llama/storage/files
+          storage_dir: /app-root/.llama/storage/files
         provider_id: meta-reference-files
         provider_type: inline::localfs
 
@@ -186,10 +186,10 @@ data:
       backends:
         kv_default:
           type: kv_sqlite
-          db_path: ${env.KV_STORE_PATH:=~/.llama/storage/rag/kv_store.db}
+          db_path: ${env.KV_STORE_PATH:=/app-root/.llama/storage/rag/kv_store.db}
         sql_default:
           type: sql_sqlite
-          db_path: ${env.SQL_STORE_PATH:=~/.llama/storage/sql_store.db}
+          db_path: ${env.SQL_STORE_PATH:=/app-root/.llama/storage/sql_store.db}
       stores:
         metadata:
           namespace: registry
